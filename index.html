@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nature Explorer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec5b",
+              "primary-content": "#0a2818",
+              "secondary": "#2d4e3e",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              "card-light": "#ffffff",
+              "card-dark": "#1a3324",
+              "text-main-light": "#111813",
+              "text-main-dark": "#e0e6e2",
+              "text-sub-light": "#61896f",
+              "text-sub-dark": "#8ba695",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"],
+              "body": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem",
+              "lg": "1.5rem",
+              "xl": "2rem",
+              "2xl": "2.5rem"
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      .scanner-line {
+        animation: scan 2s linear infinite;
+      }
+      @keyframes scan {
+        0% { top: 0%; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+      }
+      
+      .pulse-ring {
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      }
+      @keyframes pulse-ring {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(19, 236, 91, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(19, 236, 91, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(19, 236, 91, 0); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background-light dark:bg-background-dark font-body antialiased selection:bg-primary selection:text-primary-content">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+
+{
+  "name": "Nature Explorer - Plant ID",
+  "description": "A beautiful plant identification and exploration app powered by Gemini AI, featuring real-time scanning, care guides, and a curated plant encyclopedia.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
